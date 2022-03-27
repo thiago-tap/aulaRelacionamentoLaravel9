@@ -2,18 +2,23 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AddressController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// Um usuário, inicialmente, tem um endereço
+Route::get('/users', [UserController::class, 'index']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Buscar um usuário pelo ID
+Route::get('/users/{id}', [UserController::class, 'findOne']);
+
+// Inserir um novo usuário
+Route::get('/users', [UserController::class, 'insert']);
+
+// Buscar endereços
+Route::get('/address', [AddressController::class, 'index']);
+
+// Buscar endereço pelo ID
+Route::get('/address/{id}', [AddressController::class, 'findOne']);
+
+// Adicionar um novo endereço
+Route::get('/address}', [AddressController::class, 'insert']);
