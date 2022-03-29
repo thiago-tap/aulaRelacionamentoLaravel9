@@ -12,7 +12,7 @@ Route::get('/users', [UserController::class, 'index']);
 Route::get('/users/{id}', [UserController::class, 'findOne']);
 
 // Inserir um novo usuário
-Route::get('/users', [UserController::class, 'insert']);
+Route::post('/users', [UserController::class, 'insert']);
 
 // Buscar endereços
 Route::get('/address', [AddressController::class, 'index']);
@@ -21,4 +21,4 @@ Route::get('/address', [AddressController::class, 'index']);
 Route::get('/address/{id}', [AddressController::class, 'findOne']);
 
 // Adicionar um novo endereço
-Route::get('/address}', [AddressController::class, 'insert']);
+Route::post('/address', [AddressController::class, 'insert']);
